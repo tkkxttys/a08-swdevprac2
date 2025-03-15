@@ -10,7 +10,7 @@ export default async function VenueDetailPage({params}: {params: {vid: string}})
             <h1 className="text-lg font-medium">{venueDetail.data.name}</h1>
             <div className=" flex flex-row my-5">
                 <Image src={venueDetail.data.picture}
-                    alt="Car Image"
+                    alt="Venue Image"
                     width={0} height={0} sizes="100vw"
                     className="rounded-lg w-[30%]"
                 />

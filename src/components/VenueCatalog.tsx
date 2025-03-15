@@ -42,8 +42,8 @@ export default function VenueCatalog({ venueJson }: { venueJson: any }) {
     return (
         <div style={{ margin: "20px", display: "flex", flexDirection: "row", flexWrap: "wrap", justifyContent: "space-around", alignContent: "space-around" }}>
             {venueData.data.map((venueItem: any) => (
-                <Link key={venueItem.id} href={`/venue/${venueItem.id}`} passHref>
-                    <div className="w-1/5">
+                <Link key={venueItem.id} href={`/venue/${venueItem.id}`} passHref className="w-1/5">
+                    <div className="w-full">
                         <ProductCard venueName={venueItem.name} imgSrc={venueItem.picture} />
                     </div>
                 </Link>
