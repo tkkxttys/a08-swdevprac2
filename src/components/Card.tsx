@@ -3,7 +3,7 @@ import InteractiveCard from './InteractiveCard'
 import { Rating } from '@mui/material'
 import {useState} from 'react';
 
-export default function ProductCard ( {venueName, imgSrc, onRating} :  {venueName: string, imgSrc: string, onRating: Function} ) {
+export default function ProductCard ( {venueName, imgSrc, onRating} :  {venueName: string, imgSrc: string, onRating?: Function} ) {
     const  [value, setValue] = useState<number | null>(0);
 
     return (
@@ -17,7 +17,26 @@ export default function ProductCard ( {venueName, imgSrc, onRating} :  {venueNam
                 />
             </div>
             <div className='w-full h-[15%] p-[10px]'>{venueName}</div>
-            <Rating 
+            {
+                onRating? 
+                <Rating 
+                    id={venueName + " Rating"} 
+                    name={venueName + " Rating"} 
+                    data-testid={venueName + " Rating"} 
+                    className='h-[10%] px-2 py-1' 
+                    value={value}
+                    onChange={(e, newValue) => {
+                        setValue(newValue);
+                        onRating(venueName,newValue);
+                    }}
+                    onClick={(e) => e.stopPropagation()} 
+                    onPointerDown={(e) => {
+                        e.stopPropagation();
+                        e.preventDefault();
+                    }}                
+                /> : ''
+            }
+            {/* <Rating 
                 id={venueName + " Rating"} 
                 name={venueName + " Rating"} 
                 data-testid={venueName + " Rating"} 
@@ -32,7 +51,7 @@ export default function ProductCard ( {venueName, imgSrc, onRating} :  {venueNam
                     e.stopPropagation();
                     e.preventDefault();
                 }}                
-            />
+            /> */}
 
         </InteractiveCard>
     )
