@@ -16,3 +16,5 @@ const config = {
     fetch: global.fetch,
   }
 }
+
+module.exports = createJestConfig(config)
