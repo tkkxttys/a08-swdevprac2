@@ -9,15 +9,10 @@ const createJestConfig = nextJest({
 /** @type {import('jest').Config} */
 const config = {
   setupFilesAfterEnv: ['<rootDir>/jest.setup.js'],
-  //testEnvironment: 'jest-environment-jsdom',
-  testEnvironment: 'jsdom',
+  testEnvironment: 'jest-environment-jsdom',
   preset: 'ts-jest',
   verbose: true,
   globals: {
     fetch: global.fetch,
-  },
-  moduleFileExtensions: ["ts", "tsx", "js", "jsx", "json"],
-  transform: {
-    "^.+\\.(ts|tsx)$": "ts-jest",
   }
 }

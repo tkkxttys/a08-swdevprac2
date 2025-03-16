@@ -1,9 +1,9 @@
-/*import ProductCard from "./Card"
+import ProductCard from "./Card"
 import Link from "next/link"
 
-export default async function VenueCatalog({venueJson}: {venueJson: Promise<VenueJson>}) {
+export default async function VenueCatalog({venuesJson}: {venuesJson: Promise<VenueJson>}) {
 
-    const venueJsonReady = await venueJson
+    const venueJsonReady = await venuesJson
 
     return(
         <>
@@ -19,9 +19,9 @@ export default async function VenueCatalog({venueJson}: {venueJson: Promise<Venu
             </div>
         </>
     )
-}*/
+}
 
-import { useEffect, useState } from "react"
+/*import { useEffect, useState } from "react"
 import ProductCard from "./Card"
 import Link from "next/link"  // นำเข้า Link จาก next/link
 
@@ -50,4 +50,4 @@ export default function VenueCatalog({ venueJson }: { venueJson: any }) {
             ))}
         </div>
     )
-}
+}*/
