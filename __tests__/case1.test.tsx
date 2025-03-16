@@ -4,8 +4,8 @@ import VenueCatalog from '@/components/VenueCatalog'
 import { screen, render, waitFor } from '@testing-library/react'
 
 describe('Get Venues', () => {
-  var venuePromise:Promise<Object>
-  var venuesJsonResult:Object
+  var venuePromise //:Promise<Object>
+  var venuesJsonResult //:Object
   beforeEach(async () => {
     venuePromise = getVenues()
     venuesJsonResult = await venuePromise
